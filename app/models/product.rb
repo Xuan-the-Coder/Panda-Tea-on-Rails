@@ -5,4 +5,6 @@ class Product < ApplicationRecord
   validates :name, presence: true
 
   paginates_per 10
+
+  has_one_attached :image
 end
