@@ -1,2 +1,21 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<h3 class="title is-4">All Products are listed below:</h3>
+<%= paginate @products %>
+<% @products.each do |product| %>
+  <div class="columns is-multiline">
+  <div class="column">
+    <div class="card">
+        <div class="card-content">
+          <p class="title">
+            <strong><%= link_to product.name, product %></strong>
+          </p>
+          <p>Price: <%= product.price %></p>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item">Add to cart</a>
+          <a href="#" class="card-footer-item">View details</a>
+        </footer>
+    </div>
+    </div>
+  </div>
+<% end %>
+<%= paginate @products %>

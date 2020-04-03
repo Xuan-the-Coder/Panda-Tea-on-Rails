@@ -4,12 +4,67 @@
     <title>PandaTeaOnRails</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+     <header>
+      <nav class="navbar is-dark" role="navigation" aria-label="main navigation" style="margin-top:0px; padding-right:0px; paddingleft:0px;">
+        <div class="navbar-brand">
+          <a>
+            <img src="https://upload.wikimedia.org/wikipedia/en/b/b8/Clash_Royale_game_logo.png" alt="image" width="102" height="23">
+          </a>
+
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href ="/root">Home</a>
+            <a class="navbar-item" href ="/products">All products</a>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                Categories
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item">
+                  Green
+                </a>
+                <a class="navbar-item">
+                  Black
+                </a>
+                <a class="navbar-item">
+                  Oolong
+                </a>
+                <a class="navbar-item">
+                  Pu-erh
+                </a>
+                <a class="navbar-item">
+                  Coffee
+                </a>
+                <a class="navbar-item">
+                  Accessories
+                </a>
+                <a class="navbar-item">
+                  About
+                </a>
+                <a class="navbar-item">
+                  Contact
+                </a>
+                <hr class="navbar-divider">
+              </div>
+            </div>
+            </div>
+          </div>
+      </nav>
+    </header>
+    <br>
     <%= yield %>
   </body>
 </html>
