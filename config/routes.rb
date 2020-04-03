@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'categories/index'
+  get 'categories/show'
   get 'products/index'
   get 'products/show'
   root to: 'products#index'
