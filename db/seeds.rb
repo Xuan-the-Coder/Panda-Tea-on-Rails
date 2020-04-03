@@ -29,3 +29,4 @@ end
 
 creation_check(Category, CATEGORIES.size)
 creation_check(Product, NUMBER_OF_PRODUCTS)
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
