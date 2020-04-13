@@ -51,13 +51,13 @@
                 <a class="navbar-item">
                   Accessories
                 </a>
-                <a class="navbar-item">
-                  About
-                </a>
-                <a class="navbar-item">
-                  Contact
-                </a>
                 <hr class="navbar-divider">
+                <a class="navbar-item">
+                  <%= link_to 'About', permalink_path('about_us') %>
+                </a>
+                <a class="navbar-item">
+                  <%= link_to 'Contact Us', permalink_path('contact') %>
+                </a>
               </div>
             </div>
             </div>
@@ -65,6 +65,8 @@
       </nav>
     </header>
     <br>
+    <div class="main" style="padding:64px, 0px, 32px;">
     <%= yield %>
+    </div>
   </body>
 </html>

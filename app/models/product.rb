@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   has_many :users, through: :orders
   validates :name, presence: true
 
-  paginates_per 10
+  paginates_per 5
 
   has_one_attached :image
 end
