@@ -1,14 +1,25 @@
 <div class="column">
   <div class="card">
+    <% if product.image.present? %>
+      <div class="card-image">
+        <figure class="image">
+          <%= image_tag product.image %>
+        </figure>
+      </div>
+    <% end %>
       <div class="card-content">
         <p class="title">
           <strong><%= link_to product.name, product %></strong>
         </p>
-        <p>Price: <%= product.price %></p>
+        <p>Price: $<%= product.price %></p>
       </div>
       <footer class="card-footer">
-        <a href="#" class="card-footer-item">Add to cart</a>
-        <a href="#" class="card-footer-item">View details</a>
+        <% if @cart.include?(product)%>
+          <p><%= button_to 'remove from cart', remove_from_cart_path(product), method: :delete %>
+        <% else %>
+          <a href="#" class="card-footer-item"><button class="button is-info"><%= link_to 'add to cart', add_to_cart_path(product.id), method: :post%></button></a>
+        <% end %>
+        <a href="#" class="card-footer-item"><button class="button is-info">View details</button></a>
       </footer>
   </div>
 </div>

@@ -1,19 +1,26 @@
 <h3 class="title is-4">All Products are listed below:</h3>
-<%= paginate @products %>
-<% @products.each do |product| %>
-  <div class="columns is-multiline">
-    <div class="card">
-        <div class="card-content">
-          <p class="title">
-            <strong><%= link_to product.name, product %></strong>
-          </p>
-          <p>Price: <%= product.price %></p>
+<details>
+  <summary>Shopping Cart</summary>
+  <ul>
+    <% @cart.each do |product|%>
+    <li><%= product.name%> x <%= @var.fetch(product.id.to_s) %><%= button_to 'remove from cart', remove_from_cart_path(product), method: :delete %>
+      <%= form_with(url: edit_quantity_path(product), local: true, method: "get") do %>
+        <div class="field has-addons">
+          <div class="control">
+            <%= text_field_tag(:quantity, nil, class: 'input', placeholder:'enter qantity   ') %>
+          </div>
+          <div class="control">
+            <%= submit_tag("submit", class: "button is-info") %>
+          </div>
         </div>
-        <footer class="card-footer">
-          <a href="#" class="card-footer-item">Add to cart</a>
-          <a href="#" class="card-footer-item">View details</a>
-        </footer>
-    </div>
+      <% end %>
+    <% end %>
+  </ul>
+</details>
+<%= paginate @products %>
+  <div class="columns is-multiline is-mobile">
+    <%= render partial: 'products/product',
+            collection: @products%>
+
   <div>
-<% end %>
 <%= paginate @products %>

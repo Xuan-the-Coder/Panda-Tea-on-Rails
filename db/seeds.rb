@@ -20,12 +20,14 @@ CATEGORIES.each do |category|
   category=Category.create(name: category)
 end
 coffee_id = Category.where(name: 'coffee').first.id
+coffee.
 
 NUMBER_OF_PRODUCTS.times do
   product=Product.create(name: Faker::Coffee.blend_name, price: Faker::Commerce.price, category_id: coffee_id, description: Faker::Coffee.notes, )
-  #downloaded_image = open(URI.escape("https://source.unsplash.com/600x600/?#{[product.name].join(',')}"))
-    #product.image.attach(io: downloaded_image, filename: "m-#{[prodcut.name].join('-')}.jpg")
+  downloaded_image = open(URI.escape("https://source.unsplash.com/600x600/?#{[product.name].join(',')}"))
+    product.image.attach(io: downloaded_image, filename: "m-#{[product.name].join('-')}.jpg")
 end
 
 creation_check(Category, CATEGORIES.size)
 creation_check(Product, NUMBER_OF_PRODUCTS)
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

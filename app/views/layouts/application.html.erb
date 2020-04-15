@@ -12,9 +12,6 @@
      <header>
       <nav class="navbar is-dark" role="navigation" aria-label="main navigation" style="margin-top:0px; padding-right:0px; paddingleft:0px;">
         <div class="navbar-brand">
-          <a>
-            <img src="https://upload.wikimedia.org/wikipedia/en/b/b8/Clash_Royale_game_logo.png" alt="image" width="102" height="23">
-          </a>
 
           <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
@@ -54,13 +51,13 @@
                 <a class="navbar-item">
                   Accessories
                 </a>
-                <a class="navbar-item">
-                  About
-                </a>
-                <a class="navbar-item">
-                  Contact
-                </a>
                 <hr class="navbar-divider">
+                <a class="navbar-item">
+                  <%= link_to 'About', permalink_path('about_us') %>
+                </a>
+                <a class="navbar-item">
+                  <%= link_to 'Contact Us', permalink_path('contact') %>
+                </a>
               </div>
             </div>
             </div>
@@ -68,6 +65,8 @@
       </nav>
     </header>
     <br>
+    <div class="main" style="padding:64px, 0px, 32px;">
     <%= yield %>
+    </div>
   </body>
 </html>
