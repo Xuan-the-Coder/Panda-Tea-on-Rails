@@ -20,7 +20,6 @@ CATEGORIES.each do |category|
   category=Category.create(name: category)
 end
 coffee_id = Category.where(name: 'coffee').first.id
-coffee.
 
 NUMBER_OF_PRODUCTS.times do
   product=Product.create(name: Faker::Coffee.blend_name, price: Faker::Commerce.price, category_id: coffee_id, description: Faker::Coffee.notes, )

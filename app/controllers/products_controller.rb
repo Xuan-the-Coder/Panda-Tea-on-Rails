@@ -30,9 +30,11 @@ class ProductsController < ApplicationController
   end
 
   def remove_from_cart
-    id = param[:id].to_i
+    id = params[:id].to_s
     session[:cart].delete(id)
+    redirect_to root_path
   end
+
   private
 
   def initialize_session
