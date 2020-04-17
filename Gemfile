@@ -59,3 +59,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'faker'
 
 gem 'kaminari'
+
+gem 'devise-i18n'
+gem 'devise-bulma-views', '~> 0.1.0'

@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
+  devise_for :users, controllers: { sessions: 'users/sessions' }
   devise_scope :user do
     get 'sign_in', to: 'devise/sessions#new'
   end
   devise_scope :user do
     get 'sign_up', to: 'devise/registrations#new'
   end
+  devise_for :users, skip: :all
   get 'users/show'
   resources :pages
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -20,6 +21,8 @@ Rails.application.routes.draw do
   get 'products/edit_quantity/:id', to: 'products#edit_quantity', as: 'edit_quantity'
   resources "products", only: %i[index show]
   resources "categories", only: %i[index show]
+
+  get 'search', to: 'products#search', as: 'search'
 
   get ":permalink", to: "pages#permalink", as: "permalink"
 
