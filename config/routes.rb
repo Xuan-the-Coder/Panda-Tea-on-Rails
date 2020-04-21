@@ -26,5 +26,11 @@ Rails.application.routes.draw do
 
   get ":permalink", to: "pages#permalink", as: "permalink"
 
+  scope 'checkout' do
+    post 'create', to: 'checkout#create', as: 'checkout_create'
+    get 'success', to: 'checkout#success', as: 'checkout_success'
+    get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
+  end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

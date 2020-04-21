@@ -62,3 +62,5 @@ gem 'kaminari'
 
 gem 'devise-i18n'
 gem 'devise-bulma-views', '~> 0.1.0'
+
+gem 'stripe'
