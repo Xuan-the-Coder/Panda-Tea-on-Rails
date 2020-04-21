@@ -19,7 +19,7 @@
         <% else %>
           <a href="#" class="card-footer-item"><button class="button is-info"><%= link_to 'add to cart', add_to_cart_path(product.id), method: :post%></button></a>
         <% end %>
-        <a href="#" class="card-footer-item"><button class="button is-info">View details</button></a>
+        <a href="#" class="card-footer-item"><%= button_to 'Buy Now', checkout_create_path, params:{id: prodcut.id}, remote: true,  class:"button is-success button is-small"%></a>
       </footer>
   </div>
 </div>
