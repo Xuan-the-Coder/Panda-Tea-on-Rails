@@ -7,4 +7,7 @@ class Product < ApplicationRecord
   paginates_per 8
 
   has_one_attached :image
+
+  validates :name, :description, :status, presence: true
+  validates :price, :numericality => true
 end

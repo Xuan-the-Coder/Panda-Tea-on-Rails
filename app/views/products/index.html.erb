@@ -3,7 +3,7 @@
   <summary>Shopping Cart</summary>
   <ul>
     <% @cart.each do |product|%>
-    <li><%= product.name%> x <%= @var.fetch(product.id.to_s) %><%= button_to 'remove from cart', remove_from_cart_path(product.id), method: :delete %>
+    <li><%= product.name%> x <%= @var.fetch(product.id.to_s) %><%= button_to 'remove from cart', remove_from_cart_path(product.id), method: :delete, class:"button is-success button is-small" %>
       <%= form_with(url: edit_quantity_path(product), local: true, method: "get") do %>
         <div class="field has-addons">
           <div class="control">
