@@ -1,8 +1,8 @@
 class CheckoutController < ApplicationController
   def create
-    product = Product.find(params[:id])
+    @product = Product.find(params[:id])
 
-    if product.nil?
+    if @product.nil?
       redirect_to root_path
       return
     end
@@ -11,9 +11,9 @@ class CheckoutController < ApplicationController
       payment_method_types:['card'],
       line_items: [
         {
-          name: product.name,
-          description: prodcut.description,
-          amount: product.price_cents,
+          name: @product.name,
+          description: @product.description,
+          amount: (@product.price * 100).to_i,
           currency: 'cad',
           quantity: 1
         }
@@ -27,7 +27,7 @@ class CheckoutController < ApplicationController
     end
   end
 
-  def success_url
+  def success
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
   end
