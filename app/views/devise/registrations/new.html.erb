@@ -15,7 +15,7 @@
 
   <div class="field">
     <%= f.label :province %><br />
-    <%= f.select :province, options_from_collection_for_select(Province.all, :id.to_s, :name) %>
+    <%= f.select :province, options_from_collection_for_select(Province.all, :id, :name) %>
   </div>
 
   <div class="field">
