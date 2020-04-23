@@ -76,6 +76,11 @@
             </div>
           </div>
       </nav>
+      <% flash.each do |type, msg| %>
+      <div class="notification is-primary">
+        <%= msg %>
+      </div>
+      <% end %>
     </header>
     <br>
     <div class="main" style="padding:64px, 0px, 32px;">

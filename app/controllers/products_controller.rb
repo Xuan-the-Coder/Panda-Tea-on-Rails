@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all.order(:name).page(params[:page])
+
+    flash.now[:notice] = "We have exactly #{@products.size} products available."
   end
 
   def show
