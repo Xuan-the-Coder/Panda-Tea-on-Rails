@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'rubygems'
+require 'bundler/setup'
+require 'nokogiri'
+require 'open-uri'
+
 CATEGORIES = %w[green black oolong pu-erh coffee accessories].freeze
 NUMBER_OF_PRODUCTS = 100
 PROVINCES = %w[PE NL NS	NB MB QC ON SK AB BC YT NT NU].freeze
