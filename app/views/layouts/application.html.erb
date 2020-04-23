@@ -52,13 +52,12 @@
                 <a class="navbar-item">
                   Accessories
                 </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                  <%= link_to 'About', permalink_path('about_us') %>
-                </a>
-                <a class="navbar-item">
-                  <%= link_to 'Contact Us', permalink_path('contact') %>
-                </a>
+
+                  <%= link_to 'About', permalink_path('about_us'), class:"navbar-item" %>
+
+
+                  <%= link_to 'Contact Us', permalink_path('contact'), class:"navbar-item"%>
+
               </div>
             </div>
             </div>
@@ -83,7 +82,7 @@
       <% end %>
     </header>
     <br>
-    <div class="main" style="padding:64px, 0px, 32px;">
+    <div class="main" style="padding:64px; 0px; 32px">
     <%= render partial: 'products/search_form'%>
     <%= yield %>
     </div>
