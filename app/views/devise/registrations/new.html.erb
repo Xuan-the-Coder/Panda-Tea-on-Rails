@@ -4,8 +4,8 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true, autocomplete: "first name" %>
+    <%= f.label :province %><br />
+    <%= f.select :province, options_from_collection_for_select(Province.all, :id, :name) %>
   </div>
 
   <div class="field">
