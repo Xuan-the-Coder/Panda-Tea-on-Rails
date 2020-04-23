@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 CATEGORIES = %w[green black oolong pu-erh coffee accessories].freeze
 NUMBER_OF_PRODUCTS = 100
+PROVINCES = %w[PE NL NS	NB MB QC ON SK AB BC YT NT NU].freeze
 
 def creation_check(model, expected_count)
   if expected_count != model.count
