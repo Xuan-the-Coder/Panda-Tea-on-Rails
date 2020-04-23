@@ -26,4 +26,8 @@ class CheckoutController < ApplicationController
       format.js
     end
   end
+
+  def invoicing
+    @order = Order.create()
+  end
 end

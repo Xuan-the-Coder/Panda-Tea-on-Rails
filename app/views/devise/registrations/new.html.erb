@@ -4,13 +4,13 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :province %><br />
-    <%= f.select :province, options_from_collection_for_select(Province.all, :id, :name) %>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :province %><br />
+    <%= f.select :province, options_from_collection_for_select(Province.all, :id, :name) %>
   </div>
 
   <div class="field">
