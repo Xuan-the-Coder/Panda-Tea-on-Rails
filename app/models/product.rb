@@ -4,6 +4,8 @@ class Product < ApplicationRecord
   has_many :users, through: :orders
   validates :name, presence: true
 
+
+
   paginates_per 8
 
   has_one_attached :image

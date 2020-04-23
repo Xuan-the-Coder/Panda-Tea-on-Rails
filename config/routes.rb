@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   post 'products/add_to_cart/:id', to: 'products#add_to_cart', as: 'add_to_cart'
   delete 'products/remove_from_cart/:id', to: 'products#remove_from_cart', as: 'remove_from_cart'
   get 'products/edit_quantity/:id', to: 'products#edit_quantity', as: 'edit_quantity'
+  get 'product/calculate_tax/:id', to: "products#calculate_tax", as: 'calculate_tax'
   resources "products", only: %i[index show]
   resources "categories", only: %i[index show]
 

@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :orders
   has_many :products, through: :orders
   belongs_to :province
+  #accepts_nested_attributes_for :order allow_destroy: true
 
   validates :first_name, :last_name, presence: true
 end

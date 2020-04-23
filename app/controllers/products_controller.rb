@@ -37,6 +37,13 @@ class ProductsController < ApplicationController
     redirect_to root_path
   end
 
+  def calculate_tax
+    rate = params[:province].tax_rate.to_i
+    subtotal = params[:prodcut]price.to_i
+    tax = subtotal * rate
+    @total = subtotal + tax
+  end
+
   private
 
   def initialize_session

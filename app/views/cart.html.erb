@@ -1,0 +1,34 @@
+<div class="keep-shopping pv1 mt4 has-text-right">
+  <%= button_to 'Buy Now', checkout_create_path%>
+  <%= link_to 'Keep Shopping', rods_path, class: 'button is-warning' %>
+</div>
+<hr />
+
+<section class="section">
+    <div class="columns is-multiline is-mobile">
+    <%= render partial: 'products/product',
+            collection: @cart%>
+
+  <div>
+
+  <div class="columns">
+    <div class="column">
+      <%= select_tag(:province, options_from_collection_for_select(Province.all, :id, :name))%>
+    </div>
+    <div class="column total has-text-right">
+      <h4 class="title is-4">
+         <%= form_with(url: calculate_tax_path(product), local: true, method: "get") do %>
+        <div class="field has-addons">
+          <div class="control">
+            <%= select_tag(:province, options_from_collection_for_select(Province.all, :id, :name))%>
+          </div>
+          <div class="control">
+            <%= submit_tag("submit", class: "button is-info") %>
+          </div>
+        </div>
+      <% end %>
+        <span class="f5 has-text-black">Total:</span> <p class="has-text-black"><%= @total %></p>
+      </h4>
+    </div>
+  </div>
+</section>
