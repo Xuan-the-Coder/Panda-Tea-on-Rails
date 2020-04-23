@@ -7,7 +7,7 @@ ActiveAdmin.register User do
     f.inputs do
       f.input :email
       f.input :address
-      f.has_many :order, allow_destroy: true do |n_f|
+      f.has_many :orders, allow_destroy: true do |n_f|
         n_f.input :product
       end
     end
