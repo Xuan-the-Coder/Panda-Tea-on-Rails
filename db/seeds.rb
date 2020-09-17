@@ -10,32 +10,33 @@ require 'bundler/setup'
 require 'nokogiri'
 require 'open-uri'
 
-#CATEGORIES = %w[green black oolong pu-erh coffee accessories].freeze
-#NUMBER_OF_PRODUCTS = 100
-#PROVINCES = %w[PE NL NS	NB MB QC ON SK AB BC YT NT NU].freeze
+CATEGORIES = %w[green black oolong pu-erh coffee accessories].freeze
+NUMBER_OF_PRODUCTS = 100
+PROVINCES = %w[PE NL NS	NB MB QC ON SK AB BC YT NT NU].freeze
 
-#def creation_check(model, expected_count)
-  #if expected_count != model.count
-    #puts "#{model} Issue! Wanted: #{expected_count} Created: #{model.count}"
-  #else
-    #puts "#{model.count} #{model} Objects Created"
-  #end
-#end
+def creation_check(model, expected_count)
+  if expected_count != model.count
+    puts "#{model} Issue! Wanted: #{expected_count} Created: #{model.count}"
+  else
+    puts "#{model.count} #{model} Objects Created"
+  end
+end
 
-#CATEGORIES.each do |category|
-  #category=Category.create(name: category)
-#end
-#coffee_id = Category.where(name: 'coffee').first.id
+CATEGORIES.each do |category|
+  category=Category.create(name: category)
+end
+coffee_id = Category.where(name: 'coffee').first.id
 
-#NUMBER_OF_PRODUCTS.times do
-  #product=Product.create(name: Faker::Coffee.blend_name, price: Faker::Commerce.price, category_id: coffee_id, description: Faker::Coffee.notes, )
-  #downloaded_image = open(URI.escape("https://source.unsplash.com/600x600/?#{[product.name].join(',')}"))
-    #product.image.attach(io: downloaded_image, filename: "m-#{[product.name].join('-')}.jpg")
-#end
+NUMBER_OF_PRODUCTS.times do
+  product=Product.create(name: Faker::Coffee.blend_name, price: Faker::Commerce.price, category_id: coffee_id, description: Faker::Coffee.notes, )
+  downloaded_image = open(URI.escape("https://source.unsplash.com/600x600/?#{[product.name].join(',')}"))
+    product.image.attach(io: downloaded_image, filename: "m-#{[product.name].join('-')}.jpg")
+end
 
-#creation_check(Category, CATEGORIES.size)
-#creation_check(Product, NUMBER_OF_PRODUCTS)
-#AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?+
+
+creation_check(Category, CATEGORIES.size)
+creation_check(Product, NUMBER_OF_PRODUCTS)
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?+
 
 
 tea_url = 'https://dragonteahouse.biz/pu-erh/'

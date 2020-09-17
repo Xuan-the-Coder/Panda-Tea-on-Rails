@@ -6,11 +6,13 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all.order(:name).page(params[:page])
 
-    flash.now[:notice] = "We have exactly #{@products.size} products available."
+    #render json: ProductSerializer.new(@products).serialized_json
   end
 
   def show
     @product = Product.find(params[:id])
+
+    #render json: ProductSerializer.new(@product).serialized_json
   end
 
   def search
