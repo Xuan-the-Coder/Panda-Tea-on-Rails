@@ -1,24 +1,17 @@
 # README
+Features
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+App
+ADMIN and User roles
+Twitter like feed mechenism for followers
+Search by categogy
+pagination with kaminari
+Users can post articles
+Add product to cart
+Make Orders
+Edit , destroy orders (Admin)
+Working on it
+Implement State Machine
+Use more Ajax requests
+Implementing tickets
+Implementing shipping
