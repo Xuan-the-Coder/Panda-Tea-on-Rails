@@ -1,8 +1,0 @@
-<h3 class="title is-4"><%= @category.name %></h3>
-
-<h4 class="title is-5">Products of this category</h4>
-
-<div class="columns is-multiline">
-  <%= render partial: 'products/product',
-             collection: @category.products%>
-</div>
