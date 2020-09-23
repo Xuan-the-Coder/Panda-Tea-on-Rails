@@ -36,20 +36,4 @@ end
 
 creation_check(Category, CATEGORIES.size)
 creation_check(Product, NUMBER_OF_PRODUCTS)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?+
-
-
-tea_url = 'https://dragonteahouse.biz/pu-erh/'
-tea_html = open(tea_url).read
-
-tea_doc = Nokogiri::HTML(tea_html)
-product_selector = 'ul.productGrid div.card-body > h4.card-title'
-tea_name = tea_doc.css(product_selector)
-
-puerh_id = Category.where(name: 'pu-erh').first.id
-
-tea_name.each do |name|
-  name_code = name.at_css('a').content
-  puts name
-  Product.create(name: name_code, price: Faker::Commerce.price, category_id: puerh_id, description: Faker::Coffee.notes)
-end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
