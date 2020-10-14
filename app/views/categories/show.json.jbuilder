@@ -1,0 +1,1 @@
+json.array! @category_products, partial: "categories/category_products", as: :category_products
