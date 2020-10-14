@@ -4,9 +4,9 @@ class ProductsController < ApplicationController
   before_action :load_cart
 
   def index
-    @products = Product.all.order(:name).page(params[:page])
+    @products = Product.all.order(:name)
 
-    flash.now[:notice] = "We have exactly #{@products.size} products available."
+    #flash.now[:notice] = "We have exactly #{@products.size} products available."
   end
 
   def show

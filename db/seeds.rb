@@ -11,7 +11,7 @@ require 'nokogiri'
 require 'open-uri'
 
 CATEGORIES = %w[green black oolong pu-erh coffee accessories].freeze
-NUMBER_OF_PRODUCTS = 100
+NUMBER_OF_PRODUCTS = 22
 PROVINCES = %w[PE NL NS	NB MB QC ON SK AB BC YT NT NU].freeze
 
 def creation_check(model, expected_count)
